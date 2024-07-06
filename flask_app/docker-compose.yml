@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_APP: run.py
+      FLASK_ENV: development
+      DB_TYPE: mysql  #postgres
+      DB_HOST: host.docker.internal  
+      DB_USER: root
+      DB_PASSWORD: k..h3002
+      DB_NAME: patronet
+    networks:
+      - app-network
+    command: >
+      sh -c "./scripts/wait-for-it.sh host.docker.internal:3306 -- flask run --host=0.0.0.0"
+
+networks:
+  app-network:
+    driver: bridge

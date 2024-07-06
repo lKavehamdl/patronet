@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body bgcolor="black">
+    <form action="{{url_for('/.create_brand')}}" method="POST">
+        <input type="text", name="brand_name", id="brand_name" placeholder="your brand name">
+        <br>
+        <br>
+        <input type="text" name="coding_len" id="coding_len" placeholder="How many attributes your products have?">
+        <br>
+        <br>
+        <button type="submit">
+            Glick Me!
+        </button>
+    </form>
+</body>
+</html>

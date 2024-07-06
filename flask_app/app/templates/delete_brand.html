@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body bgcolor="black">
+    {%block content%}
+        <form action="{{url_for('/.delete_brand')}}" method="POST">
+            {%for x in res%}
+                <table>
+                    <tr>
+                        <td>
+                            brand id :
+                        </td>
+                        <td>
+                            {{x['brand_id']}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            brand name :
+                        </td>
+                        <td>
+                            {{x['brand_name']}}
+                        </td>
+                    </tr>
+                </table>
+            {%endfor%}
+            <label for="id">Enter ID you want to delete</label>
+            <br>
+            <br>
+            <input type="text" id="id" name="id" placeholder="ID">
+            <br>
+            <br>
+            <button type="submit"> GLICK! </button>
+        </form>
+    {%endblock content%}
+</body>
+</html>

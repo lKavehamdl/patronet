@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="black">
+    {%block content%}
+    <form action="{{url_for('/.create_coding', temp = count)}}" method="POST">
+        {%for i in range(count)%}
+            <table>
+                <tr>
+                    <input type="text" id="{{i}}-instruction" name="{{i}}-instruction" placeholder="what is this attribute?">
+                    <input type="text" name="{{i}}" id="{{i}}" placeholder="Enter values splited by ' '">
+                </tr>
+            </table>
+        {%endfor%}
+        <button type="submit">
+            Glick
+        </button>
+    </form>
+    {%endblock content%}
+</body>
+</html>

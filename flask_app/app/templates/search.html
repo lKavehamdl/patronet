@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body bgcolor="black">
+    {%block content%}
+        {%for x in res%}
+            <table>
+                <tr>
+                    <td>
+                        brand name:
+                    </td>
+                    <td>
+                        {{x['brand_name']}}
+                    </td>
+                    <br>
+                </tr>
+                <tr>
+                    <td>
+                        product code :
+                    </td>
+                    <td>
+                        {{x['product_code']}}
+                    </td>
+                </tr>
+            </table>
+        {%endfor%}
+    {%endblock content%}
+</body>
+</html>
